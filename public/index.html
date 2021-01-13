@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login page</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: #c4b170;
+            margin: auto;
+        }
+
+        .topnav a {
+            float: left;
+            display: block;
+            color: #000000;
+            text-align: center;
+            padding: 8px 6px;
+            text-decoration: none;
+            font-size: 14px;
+            width: 25%;
+        }
+
+        .topnav a:hover {
+            font-weight: bold;
+            background-color: #b29021;
+            color: gold;
+        }
+
+        .topnav a.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .topnav .icon {
+            display: none;
+        }
+
+        /*@media screen and (max-width: 600px) {
+            .topnav a:not(:first-child) {display: none;}
+            .topnav a.icon {
+                float: right;
+                display: block;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .topnav.responsive {position: relative;}
+            .topnav.responsive .icon {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+            .topnav.responsive a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+        }*/
+        .logo {
+            height: 100%;
+            width: 100%;
+            margin: inherit;
+        }
+        .qrcode {
+            height: 150px;
+            width: 150px;
+            background-color: white;
+            display: block;
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .loginandregisterrows {
+            margin: inherit;
+            column-gap: 0px;
+        }
+        .login {
+            margin: inherit;
+            margin-top: 40px;
+            background-color: #262626;
+            box-shadow: 0px 0px 5px 5px #c4b170;
+        }
+        .register {
+            margin: inherit;
+            margin-top: 40px;
+            margin-left: 2px;
+            background-color:#262626;
+            box-shadow: 0px 0px 5px 5px #c4b170;
+        }
+        .loginbt {
+            border: none;
+            color: black;
+            background-color: gold;
+            margin-top: 1em;
+        }
+        .content {
+            background-color: #262626;
+            margin: inherit;
+            box-shadow: 0px 0px 5px 5px #c4b170;
+            margin-top: 40px;
+        }
+    </style>
+    <!-- background: radial-gradient(#330000,#000000); -->
+    <body style="background: radial-gradient(#330000,#000000);">
+        <div class="container">
+            <div class="col-sm-10 rounded" style="margin: inherit;">
+                <a href="/index.html"><img src="/images/logo.png" class="logo"></a href="/index.html">
+            </div>
+            <div class="topnav col-sm-10" id="myTopnav">
+                <a href="/index.html">หน้าหลัก</a>
+                <a href="/register.html">สมัครสมาชิก</a>
+                <a href="#about">ติดต่อเรา</a>
+                <a href="/promotion.html">โปรโมชั่น</a>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                  <i class="fa fa-bars"></i>
+                </a>
+            </div>
+            <div class="row loginandregisterrows">
+                <div class="col-sm-5 rounded p-3 login">
+                    <h2 style="text-align: center; color: gold;">เข้าสู่ระบบ</h2>
+                    <form action="" method="post"> 
+                        <div class="form-group mt-2">
+                            <label for="_uname" style="color: gold;">Username</label>
+                            <input type="text" class="form-control" placeholder="Username">
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="_pass" style="color: gold;">Password</label>
+                            <input type="password" class="form-control" placeholder="Password">
+                        </div>
+                        <button type="submit" class="btn btn-primary loginbt">เข้าสู่ระบบ</button>
+                    </form>
+                </div>
+                <div class="col-sm-4 rounded p-3 register">
+                    <h2 style="text-align: center; color: gold;">สมัครสมาชิก</h2>
+                    <img src="/images/qr.jpg" class="qrcode">
+                    <!--<button type="submit" class="btn btn-success" style="font-size: 28px; margin-left: 4.15em; margin-top: 2em;">สมัครสมาชิก</button>-->
+                </div>
+            </div>
+            <div class="col-sm-10 rounded p-3 content">
+                <h1 style="color: gold; font-size: large;">แทงบอลออนไลน์ 24 ชั่วโมงกับ ufabet ฝากขั้นต่ำ 10 บาท</h1>
+                <p1 style="color: #c4b170; font-size: medium;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;แทงบอล หรือ แทงบอลออนไลน์ ได้รับความนิยมมาอย่างมากในหมู่นักพนัน 
+                    เพราะสามารถเข้าถึงได้ง่ายไม่ว่าจะเป็น ios หรือ android ก็สามารถเล่นได้เหมือนกันทั้งนั้น ในปัจจุบันมีเว็บพนันเกิดขึ้นอย่างมากมาย แต่ถ้าหากจะให้แนะนำก็คงไม่พ้นเว็บในเครือของ ufabet 
+                    เพราะเป็นเว็บ แทงบอลออนไลน์ หรือ พนันออนไลน์ ที่เกิดขึ้นเป็นเว็บแรกๆ เว็บในเครือของ ufabet นั้นมีอยู่อย่างมากมาย ถ้าจะให้แนะนำเว็บที่ดีที่สุด ทางเรายินดีนำเสนอ ufagg888 เว็บแทงบอลออนไลน์ 
+                    เว็บพนันออนไลน์ที่มีคุณภาพ ฝาก-ถอน ได้รวดเร็วทันใจเพราะทางเรามีพนักงานคอยบริการตลอด 24 ชั่วโมง พร้อมทั้งทางเรายังการันตีด้วยเว็บในเครือเดียวกันที่อยู่มาอย่างยาวนาน เช่น ufafc888, 
+                    ufabet888 และ ufa888 เป็นต้น เว็บพนันออนไลน์ หรือ เว็บแทงบอลออนไลน์ในเครือของเราได้รับความไว้วางใจจากทางลูกค้ามาอย่างยาวนาน หากท่านสนใจสมัครสมาชิก สามารถสอบถามข้อมูลได้ที่ 
+                    Line : @UFAGG888</p1><br>  
+                <p2 style="color: #c4b170; font-size: medium;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;เว็บพนันบอลออนไลน์ หรือ เว็บพนันออนไลน์ ufagg888 ของเรานั้น 
+                    มีบริการให้ท่านอย่างมากมาย ไม่ว่าจะเป็นการแทงบอลออนไลน์ที่มีหลากหลายรูปแบบ เช่น แทงแบบเดี่ยว หรือ แทงแบบสเต็ป หรือหากระหว่างรอผลบอล ทางเราก็มีบริการคาสิโนออนไลน์ให้ท่านเลือกเล่น
+                     เช่น บาคาร่า, เสือมังกร, น้ำเต้าปูปลา, เกมยิงปลา หรือ เกมสล็อต ท่านสามารถเลือกเกมที่ท่านชื่นชอบ และวางเดิมพันได้ทันทีหลังจากที่ท่านสมัครสมาชิกเรียบร้อยแล้ว</p2> 
+            </div>
+            <div class="col-sm-10 rounded p-3 content">
+                <h1 style="color: gold; font-size: large;">สมัครสมาชิกกับ ufabet หรือ ufagg888 ได้รวดเร็วทันใจภายในไม่กี่นาที</h1>
+                <p1 style="color: #c4b170; font-size: medium;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;สมัครสมาชิกกับ ufabet หรือ ufagg888 ง่ายๆ ใช้เวลาเพียง 2-3 นาที
+                    \เท่านั้น เพียงท่านกดปุ่มสมัครสมาชิกด้านบน จากนั้นกรอกข้อมูลให้ครบถ้วนแล้วกดปุ่มยืนยันการสมัคร เมือท่านกดปุ่มยืนยันการสมัครแล้ว ทางเราจะทำการส่งข้อมูล username และ password ให้ท่านผ่านทาง
+                     Line ID ที่ท่านได้ทำการระบุไว้ หรือ หากท่านต้องการสมัครสมาชิกกับทางทางพนักงานก็สามารถทำได้เช่นเดียวกัน เพียงท่านแอดไลน์ผ่านทาง QR Code หรือ Line ID ที่ทางเราได้ระบุไว้บนหน้าเว็บ 
+                     แล้วแจ้งพนักงานว่าต้องการสมัครสมาชิก พนักงานของเราจะพร้อมยินดีให้บริการท่านตลอด 24 ชั่วโมง หากท่านมีปัญหาอะไรสามารถแจ้งหรือสอบถามพนักงานได้ตลอดเวลา</p1>
+            </div>
+            <div class="col-sm-10 rounded p-3 content">
+                <h1 style="color: gold; font-size: large;">วิธีการแทงบอลออนไลน์</h1>
+                <p1 style="color: #c4b170; font-size: medium;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;วิธีแทงบอลออนไลน์ มันก็คือการใช้เทคนิคที่มีความหลากหลาย
+                    ในการเล่นนั่นเอง เราจะต้องเรียนรู้เทคนิคในการเล่นให้ครบถ้วน ส่วนการเล่นนั้นส่วนใหญ่ก็มีแค่  2 แบบ นั่นคือ แบบบอลสเต็ปและบอลเต็ง บอลสเต็ปคือ การเล่นทายคู่บอลหลายคู่ว่าคู่ไหนมี
+                    แนวโน้มที่จะชนะบ้าง ปกติแล้วควรเล่นประมาณ 3-5 คู่จะกำลังดี ถ้าเล่นมากกว่านี้ก็มีความเสี่ยงที่จะแพ้พนันลงได้ ส่วนเรื่องของบอลเต็ง คือ การเล่นบอลคู่เดียวใน 1 บิล ถ้าถูกก็ถูกเลย 
+                    ถ้าแพ้ก็แพ้เลย แต่การเสียเงินจะน้อยกว่าการเล่นแบบสเต็ปแน่นอน</p1><br>
+                <p2 style="color: #c4b170; font-size: medium;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;สำหรับสิ่งที่ต้องดูในการใช้เทคนิคการเล่นแต่ละอย่างไม่ว่าจะ
+                    เป็นลูกเตะมุม ลูกจุดโทษ การแทงสูงต่ำ หรือว่าการเล่นแบบหนึ่งแบบใด นั่นคือ เรื่องของทีมต่อ ทีมรอง อัตราการต่อรองบอล รวมทั้งเรื่องราคาค่าน้ำด้วย และยังต้องใช้ประสบการณ์ในการ
+                    เล่นด้วย เพราะจะช่วยให้คุณนั้นตัดสินใจได้เลยว่าเมื่อเจอสถานการณ์แบบนี้ คุณจะใช้เทคนิคและการเล่นแบบไหนเพื่อให้ชนะเดิมพันอีกด้วย และสิ่งที่ขาดไม่ได้อีกอย่าง คือ เรื่องของการวิเคราะห์
+                    บอล เพราะจะช่วยให้คุณเลือกทีมที่ต้องการเล่นได้อย่างถูกต้องนั่นเอง สิ่งเหล่านี้คือ เรื่องที่คุณต้องใส่ใจในเรื่องของการเล่นพนันบอล</p2>
+            </div>
+            <div class="col-sm-10 rounded p-3 content">
+                <h1 style="color: gold; font-size: large;">คาสิโนออนไลน์</h1>
+                <p1 style="color: #c4b170; font-size: medium;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;คาสิโนออนไลน์ เป็นอีกบริการหนึ่งที่ทางเว็บ ufagg888 
+                    มีไว้บริการท่าน ท่านสามารถสมัครคาสิโนบนมือถือเพื่อเริ่มเล่นคาสิโนออนไลน์ กับเรา การสมัครนั้นง่ายดายใช้เวลาเพียงไม่มีกี่นาทีท่านก็สามารถเริ่มเล่นคาสิโนออนไลน์กับเราได้ทันที 
+                    คาสิโนออนไลน์ของเรานั้นมีเกมมากมายหลายหลากให้ท่านเลือกเดิมพันไม่ว่าจะเป็น บาคาร่า เสือมังกร น้ำเต้าปูปลา เกมยิงปลา เกมสล็อต ท่านสามารถเลือกเกมที่ท่านชื่นชอบและวางเดิมพัน
+                    ได้ทันทีหลังจากที่ท่านสมัครคาสิโนออนไลน์เรียบร้อยแล้ว</p1>
+            </div><br><br>
+        </div>
+        <!--<script>
+            function myFunction() {
+              var x = document.getElementById("myTopnav");
+              if (x.className === "topnav") {
+                x.className += " responsive";
+              } else {
+                x.className = "topnav";
+              }
+            }
+        </script>-->
+    </body>
+</html>
