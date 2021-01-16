@@ -1,0 +1,173 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: #c4b170;
+    margin: auto;
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color: #000000;
+    text-align: center;
+    padding: 8px 6px;
+    text-decoration: none;
+    font-size: 14px;
+    width: 25%;
+}
+
+.topnav a:hover {
+    font-weight: bold;
+    background-color: #b29021;
+    color: gold;
+}
+
+.topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.topnav .icon {
+    display: none;
+}   
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container {
+    margin: auto;
+    max-width: 1280px;
+}
+.logo {
+    display: block;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.section_topic {
+    margin: inherit;
+    width: 83%;
+    text-align: left;
+    margin-top: 40px;
+    color: gold;
+}
+.section_1stRow {
+    margin: inherit;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.section_promotion_1 {
+    width: 100%;
+    margin: inherit;
+}
+.content1 {
+    margin: inherit;
+    margin-top: 40px;
+    padding: 18px;
+    box-shadow: 0px 0px 5px 5px #c4b170;
+}
+.promo1 {
+    width: 100%;
+}
+.section_2ndRow {
+    margin: inherit;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.section_promotion_2 {
+    width: 100%;
+    margin: inherit;
+}
+.content2 {
+    margin: inherit;
+    margin-top: 40px;
+    padding: 18px;
+    box-shadow: 0px 0px 5px 5px #c4b170;
+}
+.promo2 {
+    width: 100%;
+}
+.footer {
+    margin: auto;
+    display: block;
+    background-color: #c4b170;
+    padding: 8px 6px;
+    text-align: center;
+    color: black;
+}
+a:link {
+    text-decoration: none;
+}
+a:visited {
+    color: black;
+    text-decoration: none;
+}
+a:hover {
+    color: gold;
+}
+.section_3rdRow {
+    margin: inherit;
+    width: 83.25%;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.section_social_media {
+    margin-top: 40px;
+    width: 100%;
+    text-align: center;
+    background-color: grey;
+    padding: 5px;
+}
+.fa {
+    background: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 30px;
+    text-align: center;
+    text-decoration: none;
+}
+.fa-facebook:hover {
+    opacity: 0.7;
+    color: #3B5998;
+}
+.fa-instagram:hover {
+    opacity: 0.7;
+    color: orange;
+}
+.fa-twitter:hover {
+    opacity: 0.7;
+    color: #55ACEE;
+}
+.fa-youtube:hover {
+    opacity: 0.7;
+    color: red;
+}
+.fa-facebook {
+    color: white;
+}
+.fa-instagram {
+    color: white;
+}
+.fa-twitter {
+    color: white;
+}
+.fa-youtube {
+    color: white;
+}
+
+@media only screen and (max-width: 480px) {
+    .section_topic {
+        text-align: center;
+    }
+    .section_3rdRow {
+        width: 100%;
+    }
+}

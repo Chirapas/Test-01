@@ -6,271 +6,142 @@
         <title>Register page</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/register_style.css">
     </head>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        .topnav {
-            overflow: hidden;
-            background-color: #c4b170;
-            margin: auto;
-            /*cursor: pointer;*/
-        }
-
-        .topnav a {
-            float: left;
-            display: block;
-            color: black;
-            text-align: center;
-            padding: 8px 6px;
-            text-decoration: none;
-            font-size: 14px;
-            width: 25%;
-        }
-
-        .topnav a:hover {
-            font-weight: bold;
-            background-color: #b29021;
-            color: gold;
-        }
-
-        .topnav a.active {
-            background-color: #4CAF50;
-            color: white;
-        }
-
-        .topnav .icon {
-            display: none;
-        }
-
-        /*@media screen and (max-width: 600px) {
-            .topnav a:not(:first-child) {display: none;}
-            .topnav a.icon {
-                float: right;
-                display: block;
-            }
-        }
-
-        @media screen and (max-width: 600px) {
-            .topnav.responsive {position: relative;}
-            .topnav.responsive .icon {
-                position: absolute;
-                right: 0;
-                top: 0;
-            }
-            .topnav.responsive a {
-                float: none;
-                display: block;
-                text-align: left;
-            }
-        }*/
-        .firstrows{
-            margin: inherit;
-            text-align: center;
-        }
-        .logo {
-            height: 100%;
-            width: 100%;
-        }
-        .datafield {
-            margin: inherit;
-            margin-top: 40px;
-            background-color: #262626;
-            box-shadow: 0px 0px 5px 5px #c4b170;
-        }
-        .qrcodebg {
-            max-width: inherit;
-            max-height: inherit;
-            background-color: white;
-            margin: inherit;
-        }
-        .registerbyqr {
-            margin: inherit;
-            margin-top: 40px;
-            margin-left: 2px;
-            background-color:#262626;
-            box-shadow: 0px 0px 5px 5px #c4b170;
-            padding: 15px;
-        }
-        .content {
-            background-color: #262626;
-            box-shadow: 0px 0px 5px 5px #c4b170;
-            margin: inherit;
-            margin-top: 40px;
-        }
-        .minimal {
-            background-image:
-                linear-gradient(45deg, transparent 50%, gray 50%),
-                linear-gradient(135deg, gray 50%, transparent 50%),
-                linear-gradient(to right, #ccc, #ccc);
-            background-position:
-                calc(100% - 20px) calc(1em + 2px),
-                calc(100% - 15px) calc(1em + 2px),
-                calc(100% - 2.5em) 0.5em;
-            background-size:
-                5px 5px,
-                5px 5px,
-                1px 1.5em;
-            background-repeat: no-repeat;
-        }
-        .footer {
-            margin: auto;
-            margin-top: 20px;
-            display: block;
-            background-color: #c4b170;
-            padding: 8px 6px;
-            text-align: center;
-            color: black;
-        }
-        a:link {
-            text-decoration: none;
-        }
-        a:visited {
-            color: black;
-            text-decoration: none;
-        }
-        a:hover {
-            color: gold;
-        }
-    </style>
     <body style="background: radial-gradient(#330000,#000000);">
-        <div class="container">
-            <div class="col-sm-10 rounded" style="margin: inherit;">
-                <a href="/index.html"><img src="/images/logo.png" class="logo"></a>
-            </div>
-            <div class="topnav col-sm-10" id="myTopnav">
-                <a href="/index.html">หน้าหลัก</a>
-                <a href="/register.html">สมัครสมาชิก</a>
-                <a href="#about">ติดต่อเรา</a>
-                <a href="/promotion.html">โปรโมชั่น</a>
-                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                  <i class="fa fa-bars"></i>
-                </a>
-            </div>
-            <div class="row firstrows">
-                <div class="col-sm-5 rounded p-3 datafield">
-                    <h2 style="text-align: center; color: gold;">สมัครผ่านแบบฟอร์มสมัครสมาชิก</h2>
-                    <form action="" method="post"> 
-                        <div class="form-group mt-3">
-                            <label style="color: gold; float: left;">ชื่อ-นามสกุล</label>
-                            <input type="text" class="form-control" placeholder="ชื่อ-นามสกุล (ระบุภาษาไทย)">
-                        </div>
-                        <div class="form-group mt-3">
-                            <label style="color: gold; float: left;">ธนาคารสำหรับฝาก-ถอนเงิน</label><br>
-                            <select class="form-control mb-3 minimal" style="border-radius: 5px;">
-                                <option disabled selected>ธนาคารสำหรับฝาก-ถอนเงิน</option>
-                                <option>ธนาคาร กสิกรไทย (KBANK)</option>
-                                <option>ธนาคาร ไทยพาณิชย์ (SCB)</option>
-                                <option>ธนาคาร กรุงไทย (KTB)</option>
-                                <option>ธนาคาร ทหารไทย (TMB)</option>
-                                <option>ธนาคาร กรุงเทพ (BBL)</option>
-                                <option>ธนาคาร กรุงศรีอยุธยา (BAY)</option>
-                                <option>ธนาคาร ธนชาต (TBANK)</option>
-                                <option>ธนาคาร ยูโอบี (UOB)</option>
-                                <option>ธนาคาร ออมสิน (GSB)</option>
-                            </select>
-                        </div>
-                        <div class="form-group mt-3">
-                            <label style="color: gold; float: left;">เลขที่บัญชีสำหรับฝาก-ถอน</label>
-                            <input type="text" class="form-control" placeholder="เลขที่บัญชีสำหรับฝาก-ถอน">
-                        </div>
-                        <div class="form-group mt-3">
-                            <label style="color: gold; float: left;">เบอร์มือถือ</label>
-                            <input type="text" class="form-control" placeholder="ระบุตัวเลข 10 หลัก (ไม่ต้องมี -)">
-                        </div>
-                        <div class="form-group mt-3">
-                            <label style="color: gold; float: left;">Line-id</label>
-                            <input type="text" class="form-control" placeholder="line id">
-                        </div>
-                        <button type="submit" class="btn btn-success" style="border: none; color: black; background-color: gold; margin-top: 1em;">ยืนยันการสมัคร</button>
-                    </form>
+        <div class="section_area">
+            <div class="container">
+                <div class="section_logo_grid">
+                    <a href="/index.html"><img src="/images/logo.png" class="logo"></a>
                 </div>
-                <div class="col-sm-4 rounded registerbyqr">
-                    <h2 style="text-align: center; color: gold;">สมัครสมาชิกผ่านทาง Line OA</h2>
-                    <!--<p style="text-align: center; color: gold; font-size: 25px;;">สอบถาม / สมัครสมาชิก</p>-->
-                    <img src="/images/qr.jpg" class="qrcodebg">
+                <div class="topnav col-sm-10" id="myTopnav">
+                    <a href="/index.html">หน้าหลัก</a>
+                    <a href="/register.html">สมัครสมาชิก</a>
+                    <a href="#about">ติดต่อเรา</a>
+                    <a href="/promotion.html">โปรโมชั่น</a>
                 </div>
-            </div>
-            <div class="col-sm-10 rounded p-3 content">
-                <h1 style="color: gold; font-size: large;">สมัคร ufabet สมัครฟรีวันนี้ที่ ufagg888 ดีที่สุด</h1>
-                <p1 style="color: #c4b170; font-size: medium;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;สมัคร ufabet สมัครเล่นพนันออนไลน์ทุกประเภท ไปกับ ufabet 
-                    สะดวก รวดเร็ว มั่นคง ปลอดภัย 100% แน่นอน วางใจได้เมื่อวางเดิมพัน พนันออนไลน์ แทงบอลออนไลน์กับ ufabet ufabet เว็บพนันออนไลน์ ที่เป็นที่นิยมใช้บริการ มากที่สุดในประเทศไทย 
-                    รับเดิมพันกีฬาออนไลน์และคาสิโนทุกประเภท สามารถเล่น การพนันออนไลน์ ผ่านเว็บไซต์ หรือ บนมือถือ ได้ตลอด 24 ชม นอกจากเป็นที่นิยมอันดับหนึ่งในประเทศไทยแล้ว ufabet ยังได้รับการยอมรับ 
-                    ขยายเป็นวงกว้างในภูมิภาคเอเชียอีกด้วย เป็นที่ครองใจนักพนันออนไลน์อันดับ 1 ทั้งในประเทศไทยและภูมิภาคเอเชีย</p1>
-            </div>
-            <div class="col-sm-10 rounded p-3 content">
-                <h1 style="color: gold; font-size: large;">ufabet</h1>
-                <p1 style="color: #c4b170; font-size: medium;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ufabet เว็บพนันออนไลน์ แทงบอลออนไลน์ คาสิโนออนไลน์ 
-                    การเดิมพันกีฬาทุกประเภท มีสำนักงานใหญ่บริษัทแม่อยู่ที่ต่างประเทศ ประเทศที่ถือว่าการพนันนั้นเป็นสิ่งที่ถูกต้องตามกฏหมาย ไม่ต้องห่วงหรือกังวลใจใดๆเลยเมื่อวางเดิมพัน เล่นพนันออนไล์ แทงบอลออนไลน์ 
-                    กับ ufabet เพราะวางเดิมพันกับ ufabet นั้นถือว่าถูกกฏหมายไม่ต้องกลัว หรือกังวลใจอะไรเลย สามารถเล่นเดิมพันกับ ufabet ได้ตลอด 24 ชม ไม่มีวันหยุด อยู่ที่ไหนก็เล่นได้ แทงบอลออนไลน์ได้ 
-                    ไม่ว่าจะที่บ้าน ที่ทำงาน ร้านอาหาร แค่เพียงท่านมีอินเตอร์เน็ตเท่านั้น</p1><br>
-                <p2 style="color: #c4b170; font-size: medium;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ถึงแม้ ufabet จะให้บริการในวงกว้างทั้งภูมิภาคเอเชีย 
-                    แต่ฐานลูกค้าสมาชิกที่สำคัญของ ufabet ก็คือนักวางเดิมพัน นักเดิมพนัน พนันออนไลน์ แทงบอลออนไลน์ ชาวไทย ดังนั้นในระบบของ ufabet นั้นจะรองรับภาษาไทย และใช้ภาษาไทยเป็นหลักในระบบ 
-                    ท่านไม่ต้องกังวลว่าจะสับสน ในตัวระบบการเดิมพันออนไลน์ระหว่างที่ใช้บริการ ufabet ระบบรองรับภาษาไทยใช้งานง่าย ไม่สับสน ซับซ้อน รองรับทุกความต้องการของนักเดิมพัน พนันออนไลน์ชาวไทยทุกคน</p2>
-            </div>
-            <div class="col-sm-10 rounded p-3 content">
-                <h1 style="color: gold; font-size: large;">เว็บไซต์ในเครือ ufabet</h1>
-                <p1 style="color: #c4b170; font-size: medium;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ufabet เป็นเว็บไซต์พนันออนไลน์ขนาดใหญ่ ผ่านเน็ต ยอดนิยมอันดับ 1 
-                    ให้บริการมาอย่างยาวนาน มีบริษัท เว็บไซต์ในเครืออีกมากมาย เช่น ufabet888 ufa888 และ ufagg888 เว็บไซต์ในเครือเหล่านี้ก็ไว้วางใจได้ ว่ามั่นคง ปลอดภัย บริการดีเยี่ยม ท่านสามารถเล่นพนันออนไลน์ 
-                    แทงบอลออนไลน์กับเว็บไซต์ในเครือได้เหมือนกับที่เล่นพนันออนไลน์ แทงบอลออนไลน์กับ ufabet เราขอนำเสนอเว็บไซต์ในเครือของ ufabet ที่ดีที่สุดให้กับท่าน เว็บไซต์ ufagg888 เว็บไซต์ในเครือที่ได้รับการยอมรับจาก 
-                    ufabet ให้เป็น gold partner ถือว่าเป็นเว็บไซต์ในเครือที่ดีที่สุดของ ufabet เว็บไซต์ ufagg888 ได้รับตำแหน่ง gold partner เพราะ ufabet888 มั่นคง น่าเชื่อถือ ไว้ใจได้ ปลอดภัย 100% 
-                    และที่สำคัญคือมีการบริการที่ดีเยี่ยม gold partner เป็นรางวัลที่ได้จากการโหวตของนักพนันออนไลน์จากประเทศไทยว่าเว็บไซต์ ufagg888 มีคุณภาพด้านการเงิน มั่นคง บริการดี รางวัล gold partner 
-                    นี้คือเครื่องการันตีว่า ufagg888 นั้นเป็นเว็บไซต์พนันออนไลน์ที่ดีจริงๆ</p1>
-            </div>
-            <div class="col-sm-10 rounded p-3 content">
-                <h1 style="color: gold; font-size: large;">ufagg888 ดีอย่างไร</h1>
-                <p1 style="color: #c4b170; font-size: medium;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;พนันบอลออนไลน์ กับเว็บ แทงบอลออนไลน์ ที่มีผู้ค้นหาเยอะที่สุด ขณะนี้ รวมทั้งเนื่องจาก 
-                    ราคาบอล ที่ดีที่สุดในเอเชีย แล้วก็ระบบที่ดีทีสุด ทำให้ทาง เว็บพนันบอลออนไลน์ ถูกยกย่องให้เป็น เว็บไซต์พนันบอลบอลดีที่สุด รวมทั้งเป็น เว็บไซต์พนันบอลแนะนำ ที่ดีที่สุดในเวลานี้ สมัครสมาชิกง่ายๆเพียงแค่ไม่กี่ขั้นตอน 
-                    ก็สามารถเป็นสมาชิกกับ เว็บไซต์พนันบอลดีที่สุด ได้ทันที</p1><br>
-                <p2 style="color: #c4b170; font-size: medium;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;สมาชิกสามารถ เลือกแทงแบบต่างๆอาทิเช่น แทงบอลเดียว แทงบอลสเต็ป มิกซ์ พาเลย์ 
-                    คอมโบ และก็1×2 สามารถเลือก พนันบอล 45 นาทีแรก หรือ 45 นาทีหลัง หรือ แบบ 90 นาที ทางเว็บเปิดรับพนัน มากคู่กว่าเว็บอื่นๆและก็สมาชิกสามารถ พนันบอลสด ได้ตลอดเวลา โดยราคาบอลทางเว็บดีกว่า 
-                    เว็บ แทงบอลออนไลน์ อื่นๆอยู่มาก สามารถกล่าวได้ว่า พนันบอลคุ้มค่าที่สุด สมัครเว็บไซต์พนันบอล ยูฟ่าเบท ดีที่สุด</p2><br>
-                <p3 style="color: #c4b170; font-size: medium;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;เว็บแทงบอลออนไลน์ที่ดีที่สุด เว็บพนันออนไลน์ ได้เงินจริง พร้อมให้บริการตลอด 24 ชั่วโมง 
-                    เว็บพนันออนไลน์ ฝากถอน ไม่มี ขั้น ต่ำ มีพนันงานคอยอำนวยความสะดวกอยู่ตลอดเวลา ถ้าหากอยากมี เว็บไซต์พนันบอล ที่ดีมีคุณภาพ ขอแนะนำ เว็บไซต์เดียวครบ สมัครเว็บไซต์พนันบอล เลยวันนี้รับ สิทธิประโยชน์ต่างๆ
-                    มากมาย และก็ทางเว็บไซต์มี สูตรพนันบอล ให้กับทางสมาชิก เพื่อสมาชิกจะได้ใช้ สำหรับในการประกอบการตัดสินใจสำหรับในการ แทงบอลออนไลน์ แล้วก็ทางเว็บไซต์ ได้เพิ่มข้อมูลสำคัญ ต่อการพนันบอลออนไลน์ อาทิเช่น 
-                    ราคาบอลวันนี้ ราคาบอลไหล ไฮไลท์ฟุตบอล บทวิเคราะห์ วิจารณ์ แล้วก็ทรรศนะก่อนเกมส์</p3><br>
-                <p4 style="color: #c4b170; font-size: medium;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;นอกจากทางฟุตบอลแล้ว ทางเว็บเปิดรับพนัน กีฬายอดนิยมต่างๆเช่น เทนนิส บาสเก็ตบอล 
-                    และก็เบสบอล โดยทางเว็บได้เปิดรับพนัน กีฬายอดนิยมของคนไทยอย่าง มวยไทย ที่เปิดรับแทงแบบ ยกต่อยก ดังนั้นไม่เพียงแค่ สมัครพนันบอล สมาชิกยังสามารถพนันกีฬาอื่นๆได้อีกด้วย</p4><br>
-                <p5 style="color: #c4b170; font-size: medium;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;วิธีพนันบอล สมาชิกสามารถที่เข้าใช้บริการ ในส่วนของการเล่น แทงบอลออนไลน์ ได้ตลอด
-                    เวลา เพียงแค่ล็อคอินด้วยสมาร์ทโฟน ซึ่งทางเว็บรองรับทุกระบบอีกทั้ง Android รวมทั้ง IOS ด้วยระบบที่ปลอดภัย แล้วก็เสถียร ทำให้สมาชิกได้ใช้บริการ เว็บพนันบอลออนไลน์ ที่มีคุณภาพ แล้วก็มั่นคง ด้วยการเงินที่แข็ง
-                    แกร่ง</p5><br>
-            </div><br>
-            <div class="col-sm-10 footer">
-                <footer>
-                    <a href="/register.html">สมัคร ufabet</a>
-                    <a>&nbsp;/&nbsp;</a>
-                    <a href="/index.html">ทางเข้า ufabet</a>
-                    <a>&nbsp;/&nbsp;</a>
-                    <a href="/register.html">สมัคร ufa</a>
-                    <a>&nbsp;/&nbsp;</a>
-                    <a href="/register.html">สมัคร ยูฟ่าเบท</a>
-                    <a>&nbsp;/&nbsp;</a>
-                    <a href="/register.html">สมัคร ยูฟ่า</a>
-                    <a>&nbsp;/&nbsp;</a>
-                    <a href="/index.html">ทางเข้า ufa</a>
-                    <a>&nbsp;/&nbsp;</a>
-                    <a>บาคาร่า</a>
-                    <a>&nbsp;/&nbsp;</a>
-                    <a>เสือมังกร</a>
-                    <a>&nbsp;/&nbsp;</a>
-                    <a>สล็อตออนไลน์</a>
-                    <a>&nbsp;/&nbsp;</a>
-                    <a>แทงบอล</a>
-                </footer>
+                <div class="section_1stRow">
+                    <div class="section_register_form">
+                        <h2 style="text-align: center; color: gold;">สมัครผ่านแบบฟอร์มสมัครสมาชิก</h2>
+                        <form action="" method="post"> 
+                            <div class="form-group mt-3">
+                                <label style="color: gold; float: left;">ชื่อ-นามสกุล</label>
+                                <input type="text" class="form-control" placeholder="ชื่อ-นามสกุล (ระบุภาษาไทย)">
+                            </div>
+                            <div class="form-group mt-3">
+                                <label style="color: gold; float: left;">ธนาคารสำหรับฝาก-ถอนเงิน</label><br>
+                                <select class="form-control mb-3 minimal" style="border-radius: 5px;">
+                                    <option disabled selected>ธนาคารสำหรับฝาก-ถอนเงิน</option>
+                                    <option>ธนาคาร กสิกรไทย (KBANK)</option>
+                                    <option>ธนาคาร ไทยพาณิชย์ (SCB)</option>
+                                    <option>ธนาคาร กรุงไทย (KTB)</option>
+                                    <option>ธนาคาร ทหารไทย (TMB)</option>
+                                    <option>ธนาคาร กรุงเทพ (BBL)</option>
+                                    <option>ธนาคาร กรุงศรีอยุธยา (BAY)</option>
+                                    <option>ธนาคาร ธนชาต (TBANK)</option>
+                                    <option>ธนาคาร ยูโอบี (UOB)</option>
+                                    <option>ธนาคาร ออมสิน (GSB)</option>
+                                </select>
+                            </div>
+                            <div class="form-group mt-3">
+                                <label style="color: gold; float: left;">เลขที่บัญชีสำหรับฝาก-ถอน</label>
+                                <input type="text" class="form-control" placeholder="เลขที่บัญชีสำหรับฝาก-ถอน">
+                            </div>
+                            <div class="form-group mt-3">
+                                <label style="color: gold; float: left;">เบอร์มือถือ</label>
+                                <input type="text" class="form-control" placeholder="ระบุตัวเลข 10 หลัก (ไม่ต้องมี -)">
+                            </div>
+                            <div class="form-group mt-3">
+                                <label style="color: gold; float: left;">Line-id</label>
+                                <input type="text" class="form-control" placeholder="line id">
+                            </div>
+                            <button type="submit" class="btn btn-success register_bt">ยืนยันการสมัคร</button>
+                        </form>
+                    </div>
+                    <div class="section_qr_register">
+                        <h2 style="text-align: center; color: gold;">สมัครสมาชิกผ่านทางไลน์ OA</h2>
+                        <a style="font-size: 20px; color: white; text-decoration: underline;">สอบถาม / สมัครสมาชิก</a><br>
+                        <img src="/images/qr2.jpg">
+                    </div>
+                </div>
+                <div class="section_2ndRow">
+                    <div class="col-sm-10 rounded p-3 content">
+                        <h1 style="color: gold; font-size: large;">สมัคร ufabet สมัครฟรีวันนี้ที่ ufagg888 ดีที่สุด</h1>
+                        <p1 style="color: #c4b170; font-size: medium;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;สมัคร ufabet สมัครเล่นพนันออนไลน์ทุกประเภท ไปกับ ufabet 
+                            สะดวก รวดเร็ว มั่นคง ปลอดภัย 100% แน่นอน วางใจได้เมื่อวางเดิมพัน พนันออนไลน์ แทงบอลออนไลน์กับ ufabet ufabet เว็บพนันออนไลน์ ที่เป็นที่นิยมใช้บริการ มากที่สุดในประเทศไทย 
+                            รับเดิมพันกีฬาออนไลน์และคาสิโนทุกประเภท สามารถเล่น การพนันออนไลน์ ผ่านเว็บไซต์ หรือ บนมือถือ ได้ตลอด 24 ชม นอกจากเป็นที่นิยมอันดับหนึ่งในประเทศไทยแล้ว ufabet ยังได้รับการยอมรับ 
+                            ขยายเป็นวงกว้างในภูมิภาคเอเชียอีกด้วย เป็นที่ครองใจนักพนันออนไลน์อันดับ 1 ทั้งในประเทศไทยและภูมิภาคเอเชีย</p1>
+                    </div>
+                    <div class="col-sm-10 rounded p-3 content">
+                        <h1 style="color: gold; font-size: large;">ufabet</h1>
+                        <p1 style="color: #c4b170; font-size: medium;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ufabet เว็บพนันออนไลน์ แทงบอลออนไลน์ คาสิโนออนไลน์ 
+                            การเดิมพันกีฬาทุกประเภท มีสำนักงานใหญ่บริษัทแม่อยู่ที่ต่างประเทศ ประเทศที่ถือว่าการพนันนั้นเป็นสิ่งที่ถูกต้องตามกฏหมาย ไม่ต้องห่วงหรือกังวลใจใดๆเลยเมื่อวางเดิมพัน เล่นพนันออนไล์ แทงบอลออนไลน์ 
+                            กับ ufabet เพราะวางเดิมพันกับ ufabet นั้นถือว่าถูกกฏหมายไม่ต้องกลัว หรือกังวลใจอะไรเลย สามารถเล่นเดิมพันกับ ufabet ได้ตลอด 24 ชม ไม่มีวันหยุด อยู่ที่ไหนก็เล่นได้ แทงบอลออนไลน์ได้ 
+                            ไม่ว่าจะที่บ้าน ที่ทำงาน ร้านอาหาร แค่เพียงท่านมีอินเตอร์เน็ตเท่านั้น</p1><br>
+                        <p2 style="color: #c4b170; font-size: medium;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ถึงแม้ ufabet จะให้บริการในวงกว้างทั้งภูมิภาคเอเชีย 
+                            แต่ฐานลูกค้าสมาชิกที่สำคัญของ ufabet ก็คือนักวางเดิมพัน นักเดิมพนัน พนันออนไลน์ แทงบอลออนไลน์ ชาวไทย ดังนั้นในระบบของ ufabet นั้นจะรองรับภาษาไทย และใช้ภาษาไทยเป็นหลักในระบบ 
+                            ท่านไม่ต้องกังวลว่าจะสับสน ในตัวระบบการเดิมพันออนไลน์ระหว่างที่ใช้บริการ ufabet ระบบรองรับภาษาไทยใช้งานง่าย ไม่สับสน ซับซ้อน รองรับทุกความต้องการของนักเดิมพัน พนันออนไลน์ชาวไทยทุกคน</p2>
+                    </div>
+                    <div class="col-sm-10 rounded p-3 content">
+                        <h1 style="color: gold; font-size: large;">เว็บไซต์ในเครือ ufabet</h1>
+                        <p1 style="color: #c4b170; font-size: medium;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ufabet เป็นเว็บไซต์พนันออนไลน์ขนาดใหญ่ ผ่านเน็ต ยอดนิยมอันดับ 1 
+                            ให้บริการมาอย่างยาวนาน มีบริษัท เว็บไซต์ในเครืออีกมากมาย เช่น ufabet888 ufa888 และ ufagg888 เว็บไซต์ในเครือเหล่านี้ก็ไว้วางใจได้ ว่ามั่นคง ปลอดภัย บริการดีเยี่ยม ท่านสามารถเล่นพนันออนไลน์ 
+                            แทงบอลออนไลน์กับเว็บไซต์ในเครือได้เหมือนกับที่เล่นพนันออนไลน์ แทงบอลออนไลน์กับ ufabet เราขอนำเสนอเว็บไซต์ในเครือของ ufabet ที่ดีที่สุดให้กับท่าน เว็บไซต์ ufagg888 เว็บไซต์ในเครือที่ได้รับการยอมรับจาก 
+                            ufabet ให้เป็น gold partner ถือว่าเป็นเว็บไซต์ในเครือที่ดีที่สุดของ ufabet เว็บไซต์ ufagg888 ได้รับตำแหน่ง gold partner เพราะ ufabet888 มั่นคง น่าเชื่อถือ ไว้ใจได้ ปลอดภัย 100% 
+                            และที่สำคัญคือมีการบริการที่ดีเยี่ยม gold partner เป็นรางวัลที่ได้จากการโหวตของนักพนันออนไลน์จากประเทศไทยว่าเว็บไซต์ ufagg888 มีคุณภาพด้านการเงิน มั่นคง บริการดี รางวัล gold partner 
+                            นี้คือเครื่องการันตีว่า ufagg888 นั้นเป็นเว็บไซต์พนันออนไลน์ที่ดีจริงๆ</p1>
+                    </div>
+                    <div class="col-sm-10 rounded p-3 content">
+                        <h1 style="color: gold; font-size: large;">ufagg888 ดีอย่างไร</h1>
+                        <p1 style="color: #c4b170; font-size: medium;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;พนันบอลออนไลน์ กับเว็บ แทงบอลออนไลน์ ที่มีผู้ค้นหาเยอะที่สุด ขณะนี้ รวมทั้งเนื่องจาก 
+                            ราคาบอล ที่ดีที่สุดในเอเชีย แล้วก็ระบบที่ดีทีสุด ทำให้ทาง เว็บพนันบอลออนไลน์ ถูกยกย่องให้เป็น เว็บไซต์พนันบอลบอลดีที่สุด รวมทั้งเป็น เว็บไซต์พนันบอลแนะนำ ที่ดีที่สุดในเวลานี้ สมัครสมาชิกง่ายๆเพียงแค่ไม่กี่ขั้นตอน 
+                            ก็สามารถเป็นสมาชิกกับ เว็บไซต์พนันบอลดีที่สุด ได้ทันที</p1><br>
+                        <p2 style="color: #c4b170; font-size: medium;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;สมาชิกสามารถ เลือกแทงแบบต่างๆอาทิเช่น แทงบอลเดียว แทงบอลสเต็ป มิกซ์ พาเลย์ 
+                            คอมโบ และก็1×2 สามารถเลือก พนันบอล 45 นาทีแรก หรือ 45 นาทีหลัง หรือ แบบ 90 นาที ทางเว็บเปิดรับพนัน มากคู่กว่าเว็บอื่นๆและก็สมาชิกสามารถ พนันบอลสด ได้ตลอดเวลา โดยราคาบอลทางเว็บดีกว่า 
+                            เว็บ แทงบอลออนไลน์ อื่นๆอยู่มาก สามารถกล่าวได้ว่า พนันบอลคุ้มค่าที่สุด สมัครเว็บไซต์พนันบอล ยูฟ่าเบท ดีที่สุด</p2><br>
+                        <p3 style="color: #c4b170; font-size: medium;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;เว็บแทงบอลออนไลน์ที่ดีที่สุด เว็บพนันออนไลน์ ได้เงินจริง พร้อมให้บริการตลอด 24 ชั่วโมง 
+                            เว็บพนันออนไลน์ ฝากถอน ไม่มี ขั้น ต่ำ มีพนันงานคอยอำนวยความสะดวกอยู่ตลอดเวลา ถ้าหากอยากมี เว็บไซต์พนันบอล ที่ดีมีคุณภาพ ขอแนะนำ เว็บไซต์เดียวครบ สมัครเว็บไซต์พนันบอล เลยวันนี้รับ สิทธิประโยชน์ต่างๆ
+                            มากมาย และก็ทางเว็บไซต์มี สูตรพนันบอล ให้กับทางสมาชิก เพื่อสมาชิกจะได้ใช้ สำหรับในการประกอบการตัดสินใจสำหรับในการ แทงบอลออนไลน์ แล้วก็ทางเว็บไซต์ ได้เพิ่มข้อมูลสำคัญ ต่อการพนันบอลออนไลน์ อาทิเช่น 
+                            ราคาบอลวันนี้ ราคาบอลไหล ไฮไลท์ฟุตบอล บทวิเคราะห์ วิจารณ์ แล้วก็ทรรศนะก่อนเกมส์</p3><br>
+                        <p4 style="color: #c4b170; font-size: medium;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;นอกจากทางฟุตบอลแล้ว ทางเว็บเปิดรับพนัน กีฬายอดนิยมต่างๆเช่น เทนนิส บาสเก็ตบอล 
+                            และก็เบสบอล โดยทางเว็บได้เปิดรับพนัน กีฬายอดนิยมของคนไทยอย่าง มวยไทย ที่เปิดรับแทงแบบ ยกต่อยก ดังนั้นไม่เพียงแค่ สมัครพนันบอล สมาชิกยังสามารถพนันกีฬาอื่นๆได้อีกด้วย</p4><br>
+                        <p5 style="color: #c4b170; font-size: medium;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;วิธีพนันบอล สมาชิกสามารถที่เข้าใช้บริการ ในส่วนของการเล่น แทงบอลออนไลน์ ได้ตลอด
+                            เวลา เพียงแค่ล็อคอินด้วยสมาร์ทโฟน ซึ่งทางเว็บรองรับทุกระบบอีกทั้ง Android รวมทั้ง IOS ด้วยระบบที่ปลอดภัย แล้วก็เสถียร ทำให้สมาชิกได้ใช้บริการ เว็บพนันบอลออนไลน์ ที่มีคุณภาพ แล้วก็มั่นคง ด้วยการเงินที่แข็ง
+                            แกร่ง</p5><br>
+                    </div>
+                </div>
+                <div class="section_3rdRow">
+                    <div class="section_social_media">
+                        <a href="#" class="fa fa-facebook"></a>
+                        <a href="#" class="fa fa-instagram"></a>
+                        <a href="#" class="fa fa-twitter"></a>
+                        <a href="#" class="fa fa-youtube"></a>
+                    </div>
+                </div>
+                <div class="col-sm-10 footer">
+                    <footer>
+                        <a href="/register.html">สมัคร ufabet</a>
+                        <a>&nbsp;/&nbsp;</a>
+                        <a href="/index.html">ทางเข้า ufabet</a>
+                        <a>&nbsp;/&nbsp;</a>
+                        <a href="/register.html">สมัคร ufa</a>
+                        <a>&nbsp;/&nbsp;</a>
+                        <a href="/register.html">สมัคร ยูฟ่าเบท</a>
+                        <a>&nbsp;/&nbsp;</a>
+                        <a href="/register.html">สมัคร ยูฟ่า</a>
+                        <a>&nbsp;/&nbsp;</a>
+                        <a href="/index.html">ทางเข้า ufa</a>
+                        <a>&nbsp;/&nbsp;</a>
+                        <a>บาคาร่า</a>
+                        <a>&nbsp;/&nbsp;</a>
+                        <a>เสือมังกร</a>
+                        <a>&nbsp;/&nbsp;</a>
+                        <a>สล็อตออนไลน์</a>
+                        <a>&nbsp;/&nbsp;</a>
+                        <a>แทงบอล</a>
+                    </footer>
+                </div>
             </div>
         </div>
-        <!--<script>
-            function myFunction() {
-              var x = document.getElementById("myTopnav");
-              if (x.className === "topnav") {
-                x.className += " responsive";
-              } else {
-                x.className = "topnav";
-              }
-            }
-        </script>-->
     </body>
 </html>
