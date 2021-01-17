@@ -167,6 +167,9 @@ a:hover {
     .section_topic {
         text-align: center;
     }
+    .topnav a {
+        padding: 4px 6px;
+    }
     .section_3rdRow {
         width: 100%;
     }
