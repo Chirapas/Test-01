@@ -6,7 +6,33 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="/register_style.css">
+        <script src="jquery-3.5.1.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
+    <script>
+        //------------------------------Post data to Server Side-----------------------------------------//
+        //--->
+        $(document).ready(function(){
+            $("button").click(function(){
+
+                var fullname = $('#register_firstname').val();
+                var bank_name = $('#register_bank_name').val();
+                var bank_account_number = $('#register_bank_number').val();
+                var mobile = $('#register_mobile_number').val();
+                var line_id = $('#register_line_id').val();
+
+                $.ajax({
+                    url: '/api/register.html',
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({fullname, bank_name, bank_account_number, mobile, line_id}),
+                    success: function(response){}
+                });
+            });
+        });
+        //--->
+        //---------------------------------End of Post data----------------------------------------------//
+    </script>
     <body style="background: radial-gradient(#330000,#000000);">
         <div class="section_area">
             <div class="container">
@@ -22,37 +48,47 @@
                 <div class="section_1stRow">
                     <div class="section_register_form">
                         <h2 style="text-align: center; color: gold;">สมัครผ่านแบบฟอร์มสมัครสมาชิก</h2>
-                        <form action="" method="post"> 
-                            <div class="form-group mt-3">
+                        <form class="form_register"> 
+                            <div id="group_register_firstname" role="group" class="form-group mt-3">
                                 <label style="color: gold; float: left;">ชื่อ-นามสกุล</label>
-                                <input type="text" class="form-control" placeholder="ชื่อ-นามสกุล (ระบุภาษาไทย)">
+                                <div class="bv-no-focus-ring">
+                                    <input id="register_firstname" type="text" class="form-control" placeholder="ชื่อ-นามสกุล (ระบุภาษาไทย)" required>
+                                </div>
                             </div>
-                            <div class="form-group mt-3">
+                            <div id="group_register_bank_name" role="group" class="form-group mt-3">
                                 <label style="color: gold; float: left;">ธนาคารสำหรับฝาก-ถอนเงิน</label><br>
-                                <select class="form-control mb-3 minimal" style="border-radius: 5px;">
-                                    <option disabled selected>ธนาคารสำหรับฝาก-ถอนเงิน</option>
-                                    <option>ธนาคาร กสิกรไทย (KBANK)</option>
-                                    <option>ธนาคาร ไทยพาณิชย์ (SCB)</option>
-                                    <option>ธนาคาร กรุงไทย (KTB)</option>
-                                    <option>ธนาคาร ทหารไทย (TMB)</option>
-                                    <option>ธนาคาร กรุงเทพ (BBL)</option>
-                                    <option>ธนาคาร กรุงศรีอยุธยา (BAY)</option>
-                                    <option>ธนาคาร ธนชาต (TBANK)</option>
-                                    <option>ธนาคาร ยูโอบี (UOB)</option>
-                                    <option>ธนาคาร ออมสิน (GSB)</option>
-                                </select>
+                                <div class="no-bv-focus-ring">
+                                    <select id="register_bank_name" class="form-control mb-3 minimal" style="border-radius: 5px;" required>
+                                        <option disabled selected>ธนาคารสำหรับฝาก-ถอนเงิน</option>
+                                        <option>ธนาคาร กสิกรไทย (KBANK)</option>
+                                        <option>ธนาคาร ไทยพาณิชย์ (SCB)</option>
+                                        <option>ธนาคาร กรุงไทย (KTB)</option>
+                                        <option>ธนาคาร ทหารไทย (TMB)</option>
+                                        <option>ธนาคาร กรุงเทพ (BBL)</option>
+                                        <option>ธนาคาร กรุงศรีอยุธยา (BAY)</option>
+                                        <option>ธนาคาร ธนชาต (TBANK)</option>
+                                        <option>ธนาคาร ยูโอบี (UOB)</option>
+                                        <option>ธนาคาร ออมสิน (GSB)</option>
+                                    </select>
+                                </div>
                             </div>
-                            <div class="form-group mt-3">
+                            <div id="group_register_bank_number" role="group" class="form-group mt-3">
                                 <label style="color: gold; float: left;">เลขที่บัญชีสำหรับฝาก-ถอน</label>
-                                <input type="text" class="form-control" placeholder="เลขที่บัญชีสำหรับฝาก-ถอน">
+                                <div class="no-bv-focus-ring">
+                                    <input id="register_bank_number" type="text" class="form-control" placeholder="เลขที่บัญชีสำหรับฝาก-ถอน" required>
+                                </div>
                             </div>
-                            <div class="form-group mt-3">
+                            <div id="group_register_mobile_number" role="group" class="form-group mt-3">
                                 <label style="color: gold; float: left;">เบอร์มือถือ</label>
-                                <input type="text" class="form-control" placeholder="ระบุตัวเลข 10 หลัก (ไม่ต้องมี -)">
+                                <div class="no-bv-focus-ring">
+                                    <input id="register_mobile_number" type="text" class="form-control" placeholder="ระบุตัวเลข 10 หลัก (ไม่ต้องมี -)" required>
+                                </div>
                             </div>
-                            <div class="form-group mt-3">
+                            <div id="group_register_line_id" role="group" class="form-group mt-3">
                                 <label style="color: gold; float: left;">Line-id</label>
-                                <input type="text" class="form-control" placeholder="line id">
+                                <div class="no-bv-focus-ring">
+                                    <input id="register_line_id" type="text" class="form-control" placeholder="line id" required>
+                                </div>
                             </div>
                             <button type="submit" class="btn btn-success register_bt">ยืนยันการสมัคร</button>
                         </form>
