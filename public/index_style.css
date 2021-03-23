@@ -67,15 +67,24 @@ body {
     box-shadow: 0px 0px 5px 5px #c4b170;
     border-radius: 5px;
 }
+.form_login {
+    margin-top: 10px;
+}
 .loginbt {
+    align-items: center;
     border: none;
     color: black;
-    background-color: gold;
-    margin-top: 1em;
+    background-color: #c4b170;
+    box-shadow: 0px 0px 10px 10px #990000;
+    margin-top: 0px;
+    font-size: 30px;
+}
+.loginbt :hover {
+    color: greenyellow;
 }
 .section_suggestion img{
     width: 83%;
-    margin-top: 120px;
+    margin-top: 40px;
     box-shadow: 0px 0px 5px 5px #c4b170;
 }
 .section_2ndRow {
@@ -207,6 +216,9 @@ a:hover {
     color: white;
 }
 @media only screen and (max-width: 480px) {
+    .form_login {
+        margin-top: 0px;
+    }
     .section_1stRow {
         grid-template-columns: 1fr;
         grid-gap: 1px;
