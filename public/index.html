@@ -27,24 +27,24 @@
                     <!-- viewstate value : /wEPDwUKLTc2NjMxOTE5Nw9kFgJmD2QWBgICDxYCHgtwbGFjZWhvbGRlcgUe4LiK4Li34LmI4Lit4Lic4Li54LmJ4LmD4LiK4LmJZAIDDxYCHwAFGOC4o+C4q+C4seC4quC4nOC5iOC4suC4mWQCBA8PFgIeBFRleHQFIeC5gOC4guC5ieC4suC4quC4ueC5iOC4o+C4sOC4muC4mmRkGAEFHl9fQ29udHJvbHNSZXF1aXJlUG9zdEJhY2tLZXlfXxYBBQlidG5Mb2dpbjK0GvGzmtq4/Y17MirZEaYkr5WZJg==-->
                     <div class="section_login_column">
                         <h2 style="text-align: center; color: gold;">เข้าสู่ระบบ</h2>
-                        <form rel="nofollow" id="form2" class="form_login"> 
+                        <form action="https://autobet168.io/login.html?p=FRK2G" method="post" rel="nofollow" id="form2" class="form_login"> 
                             <!--<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="btnLogin">
                             <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value>
                             <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="BE6BC141">
                             <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTc2NjMxOTE5Nw9kFgJmD2QWBgICDxYCHgtwbGFjZWhvbGRlcgUe4LiK4Li34LmI4Lit4Lic4Li54LmJ4LmD4LiK4LmJZAIDDxYCHwAFGOC4o+C4q+C4seC4quC4nOC5iOC4suC4mWQCBA8PFgIeBFRleHQFIeC5gOC4guC5ieC4suC4quC4ueC5iOC4o+C4sOC4muC4mmRkGAEFHl9fQ29udHJvbHNSZXF1aXJlUG9zdEJhY2tLZXlfXxYBBQlidG5Mb2dpbjK0GvGzmtq4/Y17MirZEaYkr5WZJg==">
                             <input type="hidden" name="lstLang" id="lstLang" value="Default8.aspx?lang=EN-GB">
                             <input type="hidden" name="btnLogin2" id="btnLogin2">-->
-                            <div class="form-group mt-2">
+                            <!--<div class="form-group mt-2">
                                 <label for="_uname" style="color: gold;">Username</label>
                                 <input id="username" name="username" type="text" class="form-control" placeholder="Username" required>
                             </div>
                             <div class="form-group mt-2">
                                 <label for="_pass" style="color: gold;">Password</label>
                                 <input id="password" name="password" type="password" class="form-control" placeholder="Password" required>
-                            </div>
+                            </div>-->
                             <!-- <input type="hidden" name="prefix" id="prefix" value="FRK2G"> -->
                             <!--<button name="btn_login" type="submit" class="btn btn-primary loginbt">เข้าสู่ระบบ</button>-->
-                            <button type="submit" name="btn-login" id="btn-login" class="btn btn-primary loginbt">เข้าสู่ระบบ</button>
+                            <button type="submit" class="btn btn-primary loginbt">เข้าสู่ระบบ</button>
                         </form>
                     </div>
                     <div class="section_suggestion">
@@ -141,44 +141,5 @@
                 </div>
             </div>
         </div>
-        <script>
-            $(document).ready(function(){
-                $("#btn-login").click(function (event) {
-                    $('#btn-login').attr('disabled', 'disabled');
-
-                    var username = $("#username").val();
-                    var password = $("#password").val();
-                    var prefix = "FRK2G";
-
-                    $.ajax({
-                        type: 'POST',
-                        url: 'https://autobet168.api-ufa.com/transfer/f/user/login',
-                        data: {
-                            "username": username,
-                            "password": password,
-                            "prefix": prefix
-                        },
-                        dataType: 'json',
-                        success: function (data) {
-                            console.log(data)
-                            $('#btn-login').removeAttr('disabled');
-
-                            if (data.code == 0) { //If fails
-
-                                localStorage.setItem(prefix+"token", "Bearer "+data.result.token);
-                                window.location.href = 'https://autobet168.io/member.html?p=' + prefix;
-
-                            } else {
-                                alert(data.message)
-                            }
-                        },
-                        error: function (data) {
-                            $('#btn-login').removeAttr('disabled');
-                            console.log(data)
-                        }
-                    });
-                });
-            });
-        </script>
     </body>
 </html>
