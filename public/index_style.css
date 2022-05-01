@@ -54,6 +54,10 @@ body {
 
 .section_textbox {
     margin: auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 40px;
 }
 
 .section_1stRow {
