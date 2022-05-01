@@ -51,6 +51,11 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
+
+.section_textbox {
+    margin: inherit;
+}
+
 .section_1stRow {
     margin: auto;
     width: 100%;
@@ -216,6 +221,7 @@ a:hover {
 .fa-youtube {
     color: white;
 }
+
 @media only screen and (max-width: 480px) {
     .form_login {
         margin-top: 0px;
